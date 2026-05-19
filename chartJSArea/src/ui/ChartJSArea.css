@@ -1,0 +1,24 @@
+.widget-chartjsarea-clickable {
+    cursor: pointer;
+}
+
+.widget-chartjsarea {
+    display: inline-block;
+}
+
+.widget-chartjsarea.badge:empty {
+    display: initial;
+    /* Fix padding to stay round */
+    padding: 3px 10px;
+}
+
+.widget-chartjsarea.label:empty {
+    display: initial;
+    /* Fix padding to stay square */
+    padding: .2em .8em .3em;
+}
+
+.widget-chartjsarea.badge {
+    min-width: 18px;
+    min-height: 18px;
+}

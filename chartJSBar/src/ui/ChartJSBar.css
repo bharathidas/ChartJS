@@ -1,0 +1,24 @@
+.widget-chartjsbar-clickable {
+    cursor: pointer;
+}
+
+.widget-chartjsbar {
+    display: inline-block;
+}
+
+.widget-chartjsbar.badge:empty {
+    display: initial;
+    /* Fix padding to stay round */
+    padding: 3px 10px;
+}
+
+.widget-chartjsbar.label:empty {
+    display: initial;
+    /* Fix padding to stay square */
+    padding: .2em .8em .3em;
+}
+
+.widget-chartjsbar.badge {
+    min-width: 18px;
+    min-height: 18px;
+}

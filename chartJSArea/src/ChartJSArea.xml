@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.chartjsarea.ChartJSArea" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Chart JSArea</name>
+    <description>My widget description</description>
+    <icon>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAABp1BMVEUAAABV//9mzP9LtP9Ms/9Jtv9NsvdJsfpLtPpJsfdJsfhJsvhJsvdKsvdJsPhKsPhJsfdJsPhJsfdIsfhJsfdIsPdJsfhJsfhJsPhJsPhIsfhIsPdJsPdKsPdKsfdNsvdOsvdPs/dQs/dRtPdStPdTtPdUtfdWtvdXtvdauPdcuPdeufdeufhguvhiu/hju/hkvPhmvfhnvfhpvvhrv/huwPhvwfhxwfhywvhzwvh4xfl5xfl6xfl8xvl9xvl9x/mByPmCyfmFyvmGyvmJzPmKzPmLzfmNzvqPzvqQz/qT0PqU0PqU0fqX0vqY0vqa0/qe1fqg1vqj1/uk1/un2fup2vut2/uv3Puw3Puw3fuz3vu13/u23/u34Pu44Pu64fu64fy84vy94vy+4/y/4/zD5fzE5fzG5vzH5vzI5/zK6PzL6PzR6/zT7P3U7P3V7f3W7f3Y7v3Z7v3c8P3e8f3f8f3g8f3i8v3l8/3l9P3n9P3r9v7t9/7u9/7v+P7w+P7x+f7y+f70+v71+v74/P75/P76/f77/f78/f78/v79/v7+/v7////6dMsRAAAAG3RSTlMAAwURGxwhMTNic3SEh4iVp7XBzejt7vH5/f6PsMNWAAABsklEQVR4AWIYfGAUjIJRMAqYuYREJKWJAqLCPGwY+jnFpEkBEryMqPr5pEkFgkwo9kuTDviR/S9GhgFSHAgDuKXJAQIIA4TIMkAcEY4i0mQBVrgBkuQZwA43QJo8wIFhQEhEOIBQOutHJozDOP5Crp4e1RhkJ0tKGJFd6oNEdtmJyEIzpaZl5nrRZgaHM/2Pf5/vwXXfyagXgG93bwSAlEolowLMm9w83gibhXH2gKKVdD67gTnWjwCk+VVjMQS4suSnnjMLRVFc9sAHvAX2A9fySaXNBMbEZVUWscaHIMRuqwBgD8hDEbnsRmfjUKJkAQZGCTlO/xWBwIADQLIZBlY441MvfoF1xlFS/4fy+bzXKh4dgNJE7L3eh3tmtuWa+AMcMIY3dgUvZQpGEYmMw2kD7HC+R29UqyoXLaBd0QZxzgXgikLLDSqJTKU5HOcS0MsbA9jPqtwCRvXm2eorBbNIJBw3KJ9O4Yl+AAXdnyaLt7PWN3jRWLvzmAVp94zO5+n41/onfo/UpExxZqI0O7NQr0DhIq9Io7hQpbRYp7hiobRqo6ByFcNWuY6CUTAKRgEAo8X0lBD3V30AAAAASUVORK5CYII=
+    </icon>
+    <properties>
+        
+     <propertyGroup caption="General">
+
+            <property key="seriesList" type="object" isList="true">
+                <caption>Series</caption>
+                <description />
+
+                <properties>
+                    <propertyGroup caption="Series Configuration">
+
+                        <!-- ✅ Each series has its own datasource -->
+                        <property key="dataSource" type="datasource" isList="true">
+                            <caption>Data source</caption>
+                            <description />
+                        </property>
+
+                        <property key="labelAttribute" type="attribute" dataSource="dataSource">
+                            <caption>Label (X-axis)</caption>
+                            <description>Select the attribute used for X-axis labels</description>
+                            <attributeTypes>
+                                <attributeType name="String"/>
+                            </attributeTypes>
+                        </property>
+
+                        <property key="valueAttribute" type="attribute" dataSource="dataSource">
+                            <caption>Value (Y-axis)</caption>
+                            <description>Select the attribute used for Y-axis values.</description>
+                            <attributeTypes>
+                                <attributeType name="Integer"/>
+                                <attributeType name="Decimal"/>
+                                <attributeType name="Long"/>
+                                <attributeType name="String"/>
+                                <attributeType name="Boolean" />
+                                <attributeType name="DateTime" />
+                                <attributeType name="HashString" />
+                            </attributeTypes>
+                        </property>
+                         <property key="seriesLabel" type="attribute" required="false">
+                            <caption>Series Label</caption>
+                            <description>Select the attribute used as the dataset label shown in the chart legend.</description>
+                            <attributeTypes>
+                                <attributeType name="String"/>
+                            </attributeTypes>
+                        </property>
+
+                        <!-- <property key="seriesLabel" type="string">
+                            <caption>Series Label</caption>
+                            <description />
+                        </property> -->
+                        <property key="colorKey" type="attribute" required="false">
+                            <caption>Line(Area) Color (Hex) </caption>
+                            <description>Line(Area) Color (Hex) in comma separated values . Eg. #4dc9f6,#f67019</description>
+                            <attributeTypes>
+                                <attributeType name="String"/>
+                            </attributeTypes>
+                        </property>
+
+                        <!-- <property key="colorKey" type="string">
+                            <caption>Bar Color (Hex)</caption>
+                            <description />
+                        </property> -->
+
+                    </propertyGroup>
+                 
+                </properties>
+            </property>
+
+            
+
+        </propertyGroup>
+
+<propertyGroup caption="Configuration">
+
+                <!-- <property key="chartTitle" type="string">
+                <caption>Chart Title</caption>
+                <description>Chart heading</description>
+            </property> -->
+            <property key="chartTitle" type="attribute" required="false">
+                            <caption>Chart Title </caption>
+                            <description>Title of the chart</description>
+                            <attributeTypes>
+                                <attributeType name="String"/>
+                            </attributeTypes>
+                        </property>
+
+            <!-- <property key="height" type="integer" defaultValue="350">
+                <caption>Chart Height</caption>
+                <description>Height in pixels</description>
+            </property> -->
+
+             <property key="height" type="attribute" required="false">
+                            <caption>Chart Height </caption>
+                            <description>Height in pixels</description>
+                            <attributeTypes>
+                                <attributeType name="Integer"/>
+                            </attributeTypes>
+                        </property>
+
+            <!-- <property key="showLegend" type="boolean" defaultValue="true">
+                <caption>Show Legend</caption>
+                <description>Chart heading</description>
+            </property> -->
+            <property key="showLegend" type="attribute" required="false">
+                            <caption>Show Legend </caption>
+                            <description>Whether to display the chart legend</description>
+                            <attributeTypes>
+                                <attributeType name="Boolean"/>
+                            </attributeTypes>
+                        </property>
+            
+
+            <!-- <property key="showGrid" type="boolean" defaultValue="true">
+                <caption>Show Grid</caption>
+                <description>Chart heading</description>
+            </property> -->
+
+            <property key="showGrid" type="attribute" required="false">
+                            <caption>Show Grid </caption>
+                            <description>Whether to display the chart grid</description>
+                            <attributeTypes>
+                                <attributeType name="Boolean"/>
+                            </attributeTypes>
+                        </property>
+
+            <!-- <property key="stacked" type="boolean" defaultValue="false">
+                <caption>Stacked Bars</caption>
+                <description>Chart heading</description>
+            </property> -->
+
+            <!-- <property key="stacked" type="attribute" required="false">
+                            <caption>Stacked Bars </caption>
+                            <description>Whether to display stacked bars</description>
+                            <attributeTypes>
+                                <attributeType name="Boolean"/>
+                            </attributeTypes>
+                        </property> -->
+
+            <!-- <property key="horizontal" type="boolean" defaultValue="false">
+                <caption>Horizontal Chart</caption>
+                <description>Chart heading</description>
+            </property> -->
+
+             <!-- <property key="horizontal" type="attribute" required="false">
+                            <caption>Horizontal Chart </caption>
+                            <description>Whether to display the chart horizontally</description>
+                            <attributeTypes>
+                                <attributeType name="Boolean"/>
+                            </attributeTypes>
+                        </property> -->
+
+            <!-- <property key="enableAnimation" type="boolean" defaultValue="true">
+                <caption>Enable Animation</caption>
+                <description>Chart heading</description>
+            </property> -->
+
+            <property key="enableAnimation" type="attribute" required="false">
+                            <caption>Enable Animation </caption>
+                            <description>Whether to enable chart animations</description>
+                            <attributeTypes>
+                                <attributeType name="Boolean"/>
+                            </attributeTypes>
+                        </property>
+                         <property key="showValueOnTop" type="attribute" required="false">
+                            <caption>Show Values on Top </caption>
+                            <description>Whether to display values on top of the bars</description>
+                            <attributeTypes>
+                                <attributeType name="Boolean"/>
+                            </attributeTypes>
+                        </property>
+
+                         <property key="ShowExportKey" type="attribute" required="false">
+                            <caption>Show Export Button </caption>
+                            <description>Whether to display the export button</description>
+                            <attributeTypes>
+                                <attributeType name="Boolean"/>
+                            </attributeTypes>
+                            </property>
+
+                            <property key="ShowZoomKey" type="attribute" required="false">
+                            <caption>Show Zoom Button </caption>
+                            <description>Whether to display the zoom button</description>
+                            <attributeTypes>
+                                <attributeType name="Boolean"/>
+                            </attributeTypes>
+                            </property>
+
+                          <property key="onClickValueKey" type="attribute" required="false">
+                            <caption>on click value </caption>
+                            <description>set the onclick value attribute. The attribute should be of type string with unlimited characters. The sample json value:Label=jan; Value=5; Dataset=Series 2;</description>
+                            <attributeTypes>
+                                <attributeType name="String"/>
+                            </attributeTypes>
+                        </property>
+                       
+
+                 </propertyGroup>
+                 <propertyGroup caption="Events">
+            <property key="onClickAction" type="action" required="false">
+                <caption>On click action</caption>
+                <description>Action to trigger when button / label is clicked</description>
+            </property>
+        </propertyGroup>
+
+<propertyGroup caption="Visibility">
+                <systemProperty key="Visibility"/>
+            </propertyGroup>
+
+    </properties>
+</widget>

@@ -1,0 +1,24 @@
+.widget-chartjspie-clickable {
+    cursor: pointer;
+}
+
+.widget-chartjspie {
+    display: inline-block;
+}
+
+.widget-chartjspie.badge:empty {
+    display: initial;
+    /* Fix padding to stay round */
+    padding: 3px 10px;
+}
+
+.widget-chartjspie.label:empty {
+    display: initial;
+    /* Fix padding to stay square */
+    padding: .2em .8em .3em;
+}
+
+.widget-chartjspie.badge {
+    min-width: 18px;
+    min-height: 18px;
+}
